@@ -1,0 +1,124 @@
+<div class="row" style="margin-left: 10px;">
+    <div class="col-5 col-md-2">
+           <div class="card-body">
+               <h3 class="h5 card-title" style="margin-bottom: -25px;">Categorias</h3><br><hr>
+               <div class="row">
+                   <div class="col-12">
+                       <div class="form-check mb-1">
+                           <input class="form-check-input" type="checkbox" value="" id="cartCheck6">
+                           <label class="form-check-label" for="cartCheck6">
+                               Todos los productos
+                           </label>
+                       </div>
+                   </div>
+                   <div class="col-12">
+                       <div class="form-check mb-1">
+                           <input class="form-check-input" type="checkbox" value="" id="cartCheck7">
+                           <label class="form-check-label" for="cartCheck7">
+                               Creatina
+                           </label>
+                       </div>
+                   </div>
+                   <div class="col-12">
+                       <div class="form-check mb-1">
+                           <input class="form-check-input" type="checkbox" value="" id="cartCheck8">
+                           <label class="form-check-label" for="cartCheck8">
+                               Proteina
+                           </label>
+                       </div>
+                   </div>
+                   <div class="col-12">
+                       <div class="form-check mb-1">
+                           <input class="form-check-input" type="checkbox" value="" id="cartCheck9">
+                           <label class="form-check-label" for="cartCheck9">
+                               Aminoácidos
+                           </label>
+                       </div>
+                   </div>
+                   <div class="col-12">
+                       <div class="form-check mb-1">
+                           <input class="form-check-input" type="checkbox" value="" id="cartCheck10">
+                           <label class="form-check-label" for="cartCheck10">
+                               Hidratos
+                           </label>
+                       </div>
+                   </div>
+                   <div class="col-12">
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="cartCheck10">
+                        <label class="form-check-label" for="cartCheck10">
+                            Pre-entrenos
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="cartCheck10">
+                        <label class="form-check-label" for="cartCheck10">
+                            Control de peso
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="cartCheck10">
+                        <label class="form-check-label" for="cartCheck10">
+                            Barritas
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="cartCheck10">
+                        <label class="form-check-label" for="cartCheck10">
+                            Vitaminas y minerales
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="cartCheck10">
+                        <label class="form-check-label" for="cartCheck10">
+                            Quemagrasas
+                        </label>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-check mb-1">
+                        <input class="form-check-input" type="checkbox" value="" id="cartCheck10">
+                        <label class="form-check-label" for="cartCheck10">
+                            Intraentrenos
+                        </label>
+                    </div>
+                </div>
+                <button href="#" class="button-reset">Restablecer</button>
+               </div>
+           </div>
+   </div>
+   
+   @for (product of products; track $index) {
+    <div class="col-6 col-md-3" style=" margin-left: 1px; margin-bottom: 50px;">
+        <div class="card shadow">
+            <img src={{product.photo}} alt="imagen producto"> 
+            <div class="card-footer border-top border-gray-300 p-2">
+                <a href="#" class="h6">{{product.title}}</a>
+                <h6 class="h6 fw-light text-gray mt-1">{{product.description}}</h6>
+                <div class="d-flex mt-1">
+                    <span><img width="15" height="15" src="https://img.icons8.com/emoji/20/star-emoji.png" alt="star-emoji"/></span> 
+                    <span><img width="15" height="15" src="https://img.icons8.com/emoji/20/star-emoji.png" alt="star-emoji"/></span> 
+                    <span><img width="15" height="15" src="https://img.icons8.com/emoji/20/star-emoji.png" alt="star-emoji"/></span> 
+                    <span><img width="15" height="15" src="https://img.icons8.com/emoji/20/star-emoji.png" alt="star-emoji"/></span> 
+                    <span><img width="15" height="15" src="https://img.icons8.com/emoji/20/star-emoji.png" alt="star-emoji"/></span> 
+                    <span class="badge bg-primary ms-1">{{product.rating}}</span>
+                </div>
+                <div class="d-flex justify-content-between align-items-center mt-2">
+                    <span class="h6 mb-0 text-gray">{{product.price}}€</span> 
+                    <a class="btn btn-xs btn-tertiary" href="#">
+                        <img width="15" height="15" src="https://img.icons8.com/material-sharp/20/shopping-cart.png" alt="shopping-cart"/>
+                    </a>
+                </div>
+            </div>
+        </div> 
+    </div>
+}
+</div>

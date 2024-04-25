@@ -17,15 +17,17 @@
   <nav class="navbar navbar-expand-lg navbar-white bg-white">
     <div class="container">
 
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" routerLink="/home" routerLinkActive="active">
+
         <img src="../../../assets/img/logo500x500.png" alt="imagen del logo" width="100px" height="auto">
+
         </a>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-3">
 
           <li class="nav-item dropdown position-static">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" routerLink="/allproducts" routerLinkActive="active" href="/allproducts" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Productos
             </a>
 
@@ -36,7 +38,7 @@
                 <div class="row my-4">
                   <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
                     <div class="list-group list-group-flush">
-                      <a href="" class="list-group-item list-group-item-action"><strong>Creatina</strong></a>
+                      <a href="/products" class="list-group-item list-group-item-action"><strong>Creatina</strong></a>
                       <a href="" class="list-group-item list-group-item-action"><strong>Proteína</strong></a>
                       <a href="" class="list-group-item list-group-item-action"><strong>Aminoácidos</strong></a>
                       <a href="" class="list-group-item list-group-item-action"><strong>Hidratos de carbono</strong></a>
@@ -82,10 +84,10 @@
 
         <ul class="navbar-nav ms-3">
           <li class="nav-item me-3">
-            <a class="nav-link d-flex align-items-center" href="#!"><img width="30" height="30" src="https://img.icons8.com/ios-filled/30/shopping-basket--v1.png" alt="shopping-basket--v1"/></a>
+            <a class="nav-link d-flex align-items-center" routerLink="/cart"><img width="30" height="30" src="https://img.icons8.com/ios-filled/30/shopping-basket--v1.png" alt="shopping-basket--v1"/></a>
           </li>
           <li class="nav-item" style="width: 65px;">
-            <a class="nav-link d-flex align-items-center" href="#!">
+            <a routerLink="/login" routerLinkActive="active" class="nav-link d-flex align-items-center">
               <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/user.png" alt="user"/>
             </a>
           </li>

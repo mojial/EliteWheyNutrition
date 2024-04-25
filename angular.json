@@ -57,10 +57,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "TFG:build:production"
+              "buildTarget": "tfg:build:production"
             },
             "development": {
-              "buildTarget": "TFG:build:development"
+              "buildTarget": "tfg:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -68,7 +68,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "TFG:build"
+            "buildTarget": "tfg:build"
           }
         },
         "test": {
