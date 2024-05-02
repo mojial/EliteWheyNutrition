@@ -1,17 +1,16 @@
 import { Component } from '@angular/core';
 import { CardComponent } from "../../components/card/card.component";
-import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
-
+import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-allproducts',
+    selector: 'app-hidratos',
     standalone: true,
-    templateUrl: './allproducts.component.html',
-    styleUrl: './allproducts.component.css',
+    templateUrl: './hidratos.component.html',
+    styleUrl: './hidratos.component.css',
     imports: [CardComponent]
 })
-export class AllproductsComponent {
+export class HidratosComponent {
     
     constructor(
         private userService : UserService,
@@ -29,5 +28,4 @@ export class AllproductsComponent {
         })
         .catch(error => console.log(error));
       }
-
 }

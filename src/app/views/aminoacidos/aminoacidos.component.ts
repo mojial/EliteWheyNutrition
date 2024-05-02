@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
 import { CardComponent } from "../../components/card/card.component";
-import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
-
+import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-allproducts',
+    selector: 'app-aminoacidos',
     standalone: true,
-    templateUrl: './allproducts.component.html',
-    styleUrl: './allproducts.component.css',
+    templateUrl: './aminoacidos.component.html',
+    styleUrl: './aminoacidos.component.css',
     imports: [CardComponent]
 })
-export class AllproductsComponent {
-    
+export class AminoacidosComponent {
+
     constructor(
         private userService : UserService,
         private router: Router

@@ -6,17 +6,22 @@
     margin-bottom: 50px;
 }
 
-button {
+#botonreset {
     background-color: #000;
     color: #fff;
     border: none;
-    border-radius: 15px; /* Reducir el radio del borde para que el fondo negro sea más pequeño */
-    padding: 8px 15px; /* Ajustar el padding para reducir el tamaño del fondo negro */
+    border-radius: 100px; /* Reducir el radio del borde para que el fondo negro sea más pequeño */
+    padding: 8px 10px; /* Ajustar el padding para reducir el tamaño del fondo negro */
     cursor: pointer;
     margin-top: 5px;
+    text-align: center;
 }
 
-button:hover {
+#botonreset:hover {
     background-color: #333; /* Cambiar el color de fondo cuando se pasa el cursor sobre el botón */
 }
 
+a{
+    text-decoration: none;
+    color: #000;
+}

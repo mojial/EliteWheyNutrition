@@ -3,16 +3,15 @@ import { CardComponent } from "../../components/card/card.component";
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 
-
 @Component({
-    selector: 'app-allproducts',
+    selector: 'app-creatine',
     standalone: true,
-    templateUrl: './allproducts.component.html',
-    styleUrl: './allproducts.component.css',
+    templateUrl: './creatine.component.html',
+    styleUrl: './creatine.component.css',
     imports: [CardComponent]
 })
-export class AllproductsComponent {
-    
+export class CreatineComponent {
+
     constructor(
         private userService : UserService,
         private router: Router

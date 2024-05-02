@@ -36,20 +36,20 @@
                   <div class="row my-4">
                     <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
                       <div class="list-group list-group-flush">
-                        <a href="/products" class="list-group-item list-group-item-action"><strong>Creatina</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Proteína</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Aminoácidos</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Hidratos de carbono</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Preentrenos</strong></a>
+                        <a href="/creatine" class="list-group-item list-group-item-action"><strong>Creatina</strong></a>
+                        <a href="/proteina" class="list-group-item list-group-item-action"><strong>Proteína</strong></a>
+                        <a href="/aminoacidos" class="list-group-item list-group-item-action"><strong>Aminoácidos</strong></a>
+                        <a href="/hidratos" class="list-group-item list-group-item-action"><strong>Hidratos de carbono</strong></a>
+                        <a href="/preentrenos" class="list-group-item list-group-item-action"><strong>Preentrenos</strong></a>
                       </div>
                     </div>
                     <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
                       <div class="list-group list-group-flush">
-                        <a href="" class="list-group-item list-group-item-action"><strong>Control de peso</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Barritas</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Vitaminas y Minerales</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Quemagrasas</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Intraentrenos</strong></a>
+                        <a href="/controldepeso" class="list-group-item list-group-item-action"><strong>Control de peso</strong></a>
+                        <a href="/barritas" class="list-group-item list-group-item-action"><strong>Barritas</strong></a>
+                        <a href="/vitaminasminerales" class="list-group-item list-group-item-action"><strong>Vitaminas y Minerales</strong></a>
+                        <a href="/quemagrasas" class="list-group-item list-group-item-action"><strong>Quemagrasas</strong></a>
+                        <a href="/intraentreno" class="list-group-item list-group-item-action"><strong>Intraentrenos</strong></a>
                       </div>
                     </div>
                     <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
@@ -81,12 +81,18 @@
   
           <ul class="navbar-nav ms-3">
             <li class="nav-item me-3">
-              <a class="nav-link d-flex align-items-center" href="#!"><img width="30" height="30" src="https://img.icons8.com/ios-filled/30/shopping-basket--v1.png" alt="shopping-basket--v1"/></a>
+              <a class="nav-link d-flex align-items-center" routerLink="/cart"><img width="30" height="30" src="https://img.icons8.com/ios-filled/30/shopping-basket--v1.png" alt="shopping-basket--v1"/></a>
             </li>
             <li class="nav-item" style="width: 65px;">
-              <a href="/login" routerLinkActive="active" class="nav-link d-flex align-items-center">
+              <a class="nav-link d-flex align-items-center">
                 <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/user.png" alt="user"/>
               </a>
+            </li>
+            <li class="nav-item" style="width: 65px; margin-top: 10px;">
+              usuario <!-- Falta el token de firebase par que imprima el username -->
+            </li>
+            <li class="nav-item" style="width: 65px; margin-top: 8px;">
+              <button type="button" id="logout" (click)="onClick()" class="btn btn-outline-danger btn-sm">Cerrar sesión</button>
             </li>
           </ul>
         </div>

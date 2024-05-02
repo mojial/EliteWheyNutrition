@@ -27,7 +27,12 @@ export class AppComponent {
   }
 
   private shouldHideHeader(url: string): boolean {
-    return url.includes('register') || url.includes('login') || url.includes('allproducts') || url.includes('cart');
+    return url.includes('register') || url.includes('login') || url.includes('allproducts') || url.includes('cart') 
+    || url.includes('creatine') || url.includes('proteina') 
+    || url.includes('aminoacidos') || url.includes('hidratos') 
+    || url.includes('preentrenos') || url.includes('controldepeso') 
+    || url.includes('barritas') || url.includes('vitaminasminerales') 
+    || url.includes('quemagrasas') || url.includes('intraentrenos') ;
   }
 
   private shouldHideFooter(url: string): boolean {

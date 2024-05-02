@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
 import { CardComponent } from "../../components/card/card.component";
-import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
-
+import { Router } from '@angular/router';
 
 @Component({
-    selector: 'app-allproducts',
+    selector: 'app-preentrenos',
     standalone: true,
-    templateUrl: './allproducts.component.html',
-    styleUrl: './allproducts.component.css',
+    templateUrl: './preentrenos.component.html',
+    styleUrl: './preentrenos.component.css',
     imports: [CardComponent]
 })
-export class AllproductsComponent {
-    
+export class PreentrenosComponent {
+
     constructor(
         private userService : UserService,
         private router: Router
