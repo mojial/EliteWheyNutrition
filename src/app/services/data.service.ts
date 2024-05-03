@@ -11,16 +11,16 @@ export class DataService {
   constructor(public http: HttpClient) { }
 
   public elitewheyProductsUrl = 'http://localhost:3000/products';
-  public creatinaUrl = 'http://localhost:3000/products/1';
-  public proteinaUrl = 'http://localhost:3000/products/2';
-  public aminoacidosUrl = 'http://localhost:3000/products/3';
-  public hidratosUrl = 'http://localhost:3000/products/4';
-  public preentrenosUrl = 'http://localhost:3000/products/5';
-  public controldepesoUrl = 'http://localhost:3000/products/6';
-  public barritasUrl = 'http://localhost:3000/products/7';
-  public vitaminasmineralesUrl = 'http://localhost:3000/products/8';
-  public quemagrasasUrl = 'http://localhost:3000/products/9';
-  public intraentrenosUrl = 'http://localhost:3000/products/10';
+  public creatinaUrl = 'http://localhost:3000/products/category/1';
+  public proteinaUrl = 'http://localhost:3000/products/category/2';
+  public aminoacidosUrl = 'http://localhost:3000/products/category/3';
+  public hidratosUrl = 'http://localhost:3000/products/category/4';
+  public preentrenosUrl = 'http://localhost:3000/products/category/5';
+  public controldepesoUrl = 'http://localhost:3000/products/category/6';
+  public barritasUrl = 'http://localhost:3000/products/category/7';
+  public vitaminasmineralesUrl = 'http://localhost:3000/products/category/8';
+  public quemagrasasUrl = 'http://localhost:3000/products/category/9';
+  public intraentrenosUrl = 'http://localhost:3000/products/category/10';
 
 
   public getElitewheyUrlReponse(): Observable<Product[]> {
@@ -65,6 +65,10 @@ export class DataService {
 
   public intraentrenosResponse(): Observable<Product[]> {
     return this.http.get<Product[]>(this.intraentrenosUrl);
+  }
+
+  getProductById(productId: string): Observable<Product> {
+    return this.http.get<Product>(`${this.elitewheyProductsUrl}/${productId}`);
   }
 
 }

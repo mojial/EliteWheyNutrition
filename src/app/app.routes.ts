@@ -16,6 +16,8 @@ import { PreentrenosComponent } from './views/preentrenos/preentrenos.component'
 import { HidratosComponent } from './views/hidratos/hidratos.component';
 import { AminoacidosComponent } from './views/aminoacidos/aminoacidos.component';
 import { ProteinaComponent } from './views/proteina/proteina.component';
+import { ProfileComponent } from './views/profile/profile.component';
+import { ProductDetailComponent } from './views/product-detail/product-detail.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -27,8 +29,9 @@ export const routes: Routes = [
     { path: 'login', component: RegisterComponent },
     { path: 'register', component: NewUserComponent },
     { path: 'products', component: ProductsComponent},
-    { path: 'allproducts', component: AllproductsComponent},
     { path: 'cart', component: CardComponent},
+    { path: 'profile', component: ProfileComponent},
+    { path: 'allproducts', component: AllproductsComponent},
     { path: 'creatine', component: CreatineComponent},
     { path: 'proteina', component: ProteinaComponent},
     { path: 'aminoacidos', component: AminoacidosComponent},
@@ -38,6 +41,7 @@ export const routes: Routes = [
     { path: 'barritas', component: BarritasComponent},
     { path: 'vitaminasminerales', component: VitaminasmineralesComponent},
     { path: 'quemagrasas', component: QuemagrasasComponent},
-    { path: 'intraentrenos', component: IntraentrenosComponent}
+    { path: 'intraentrenos', component: IntraentrenosComponent},
+    { path: 'product-detail/:id', component: ProductDetailComponent }
 
 ];

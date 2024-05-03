@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from "../../interfaces/product";
 import { DataService } from '../../services/data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -12,12 +12,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CardComponent {
 
+  navigateToProduct(productId: string) {
+    this.router.navigate(['/product-detail', productId]);
+  }
+
+  public nig(productId: string): void {
+    console.log(productId);
+  }
+
   products!: Product[];
-  constructor(private route: ActivatedRoute,private DataService: DataService) {}
+  constructor(private router: Router, private route: ActivatedRoute, private DataService: DataService) {}
 
   ngOnInit() {
     this.route.url.subscribe(segments => {
-      // Verificar la ruta actual y realizar la petición correspondiente
       switch (segments[0]?.path) {
         case 'allproducts':
           this.DataService.getElitewheyUrlReponse().subscribe((response: Product[]) => {
@@ -73,9 +80,6 @@ export class CardComponent {
           this.DataService.intraentrenosResponse().subscribe((response: Product[]) => {
             this.products = response;
           });
-          break;
-        default:
-          case 'allproducts':
           break;
       }
     });

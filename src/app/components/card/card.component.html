@@ -1,7 +1,7 @@
 <div class="row" style="margin-left: 10px;">
     <div class="col-5 col-md-2">
            <div class="card-body">
-               <h3 class="h5 card-title" style="margin-bottom: -25px;">Categorias</h3><br><hr>
+               <h3 class="h5 card-title" style="margin-bottom: -25px;">Categorias de productos</h3><br><hr>
                <div class="row">
                    <div class="col-12">
                        <div class="form-check mb-1">
@@ -65,10 +65,10 @@
    
    @for (product of products; track $index) {
     <div class="col-6 col-md-3" style=" margin-left: 1px; margin-bottom: 50px;">
-        <div class="card shadow">
-            <img src={{product.photo}} alt="imagen producto"> 
+        <div (click)="navigateToProduct(product.id)" class="card shadow">
+            <img src={{product.photo}} alt="imagen producto" style="cursor:pointer"> 
             <div class="card-footer border-top border-gray-300 p-2">
-                <a href="#" class="h6">{{product.title}}</a>
+                <a class="h6">{{product.title}}</a>
                 <h6 class="h6 fw-light text-gray mt-1">{{product.description}}</h6>
                 <div class="d-flex mt-1">
                     <span><img width="15" height="15" src="https://img.icons8.com/emoji/20/star-emoji.png" alt="star-emoji"/></span> 
