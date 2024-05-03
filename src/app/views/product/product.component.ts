@@ -1,19 +1,17 @@
 import { Component } from '@angular/core';
 import { Product } from '../../interfaces/product';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DataService } from '../../services/data.service';
-import { CardComponent } from "../../components/card/card.component";
 import { UserService } from '../../services/user.service';
-import { ProductComponent } from "../product/product.component";
+import { DataService } from '../../services/data.service';
 
 @Component({
-    selector: 'app-product-detail',
-    standalone: true,
-    templateUrl: './product-detail.component.html',
-    styleUrl: './product-detail.component.css',
-    imports: [CardComponent, ProductComponent]
+  selector: 'app-product',
+  standalone: true,
+  imports: [],
+  templateUrl: './product.component.html',
+  styleUrl: './product.component.css'
 })
-export class ProductDetailComponent {
+export class ProductComponent {
   
   product!: Product;
 
