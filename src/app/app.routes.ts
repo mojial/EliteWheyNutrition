@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import { RegisterComponent } from './components/register/register.component';
 import { MainComponent } from './components/main/main.component';
 import { NewUserComponent } from './components/new-user/new-user.component';
-import { ProductsComponent } from './components/products/products.component';
 import { AllproductsComponent } from './views/allproducts/allproducts.component';
 import { CardComponent } from './components/card/card.component';
 import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
@@ -18,6 +17,7 @@ import { AminoacidosComponent } from './views/aminoacidos/aminoacidos.component'
 import { ProteinaComponent } from './views/proteina/proteina.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { ProductDetailComponent } from './views/product-detail/product-detail.component';
+import { CartComponent } from './components/cart/cart.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -28,8 +28,7 @@ export const routes: Routes = [
     },
     { path: 'login', component: RegisterComponent },
     { path: 'register', component: NewUserComponent },
-    { path: 'products', component: ProductsComponent},
-    { path: 'cart', component: CardComponent},
+    { path: 'cart', component: CartComponent},
     { path: 'profile', component: ProfileComponent},
     { path: 'allproducts', component: AllproductsComponent},
     { path: 'creatine', component: CreatineComponent},

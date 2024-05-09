@@ -1,99 +1,94 @@
-<!--Main Navigation-->
+<section class="h-100 h-custom" style="background-color: #282c54;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12">
+        <div class="card card-registration card-registration-2" style="border-radius: 15px;">
+          <div class="card-body p-0">
+            <div class="row g-0">
+              <div class="col-lg-8">
+                <div class="p-5">
+                  <div class="d-flex justify-content-between align-items-center mb-5">
+                    <h1 class="fw-bold mb-0 text-black">Carrito</h1>
+                    <h6 class="mb-0 text-muted">{{getTotalProducts()}} Productos</h6>
+                  </div>
 
-<header>
-    <div id="info">
-      <div class="container d-flex justify-content-between">
-        <div class="d-flex">
-            <p class="text-light mb-0 p-2 fs-6">Internacional: envíos gratis a partir de 120 € | Península: envíos gratis a partir de 25 €</p>
-        </div>
-        <p id="leng" class="text-light mb-0 p-2 fs-6">
-          <img width="30" height="30" src="https://img.icons8.com/color/30/spain-2.png" alt="spain-2"/>
-          Español
-        </p>
-      </div>
-    </div>
-  
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-white bg-white">
-      <div class="container">
-  
-        <a class="navbar-brand" href="/home" routerLinkActive="active">
-          <img src="../../../assets/img/logo500x500.png" alt="imagen del logo" width="100px" height="auto">
-        </a>
-  
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-3">
-  
-            <li class="nav-item dropdown position-static">
-              <a class="nav-link dropdown-toggle" routerLink="/allproducts" routerLinkActive="active" href="/allproducts" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Productos
-              </a>
-  
-              <!-- Dropdown menu -->
-              <div class="dropdown-menu w-100 mt-0" aria-labelledby="navbarDropdown"
-                style="border-top-left-radius: 0; border-top-right-radius: 0;">
-                <div class="container">
-                  <div class="row my-4">
-                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                      <div class="list-group list-group-flush">
-                        <a href="/products" class="list-group-item list-group-item-action"><strong>Creatina</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Proteína</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Aminoácidos</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Hidratos de carbono</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Preentrenos</strong></a>
+                  <hr class="my-4">
+
+                  @for (item of cartItems; track $index) {
+                    <div class="row mb-4 d-flex justify-content-between align-items-center">
+                      <div class="col-md-2 col-lg-2 col-xl-2">
+                        <img
+                          [src]="item.product.photo"
+                          class="img-fluid rounded-3" alt="Cotton T-shirt">
+                      </div>
+                      <div class="col-md-3 col-lg-3 col-xl-3">
+                        <h6 class="text-black mb-0">{{item.product.title}}</h6>
+                      </div>
+                      <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                        <h6 class="mb-0">{{item.product.price}}€ </h6>
+                      </div>
+                      <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                        <a (click)="removeFromCart(item.productId)" class="text-muted"><img width="25" height="25" src="https://img.icons8.com/ios/25/delete-sign--v1.png" alt="delete-sign--v1"/></a>
                       </div>
                     </div>
-                    <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                      <div class="list-group list-group-flush">
-                        <a href="" class="list-group-item list-group-item-action"><strong>Control de peso</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Barritas</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Vitaminas y Minerales</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Quemagrasas</strong></a>
-                        <a href="" class="list-group-item list-group-item-action"><strong>Intraentrenos</strong></a>
-                      </div>
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
-                      <div class="list-group list-group-flush">
-                        <a href="" class="list-group-item list-group-item-action">
-                          <a href="#"><img width="30" height="30" src="https://img.icons8.com/fluency/30/instagram-new.png" alt="instagram-new"/></a>
-                          <a href="#"><img width="30" height="30" src="https://img.icons8.com/color/30/twitter--v1.png" alt="twitter--v1"/></a>
-                          <a href="#"><img width="30" height="30" src="https://img.icons8.com/color/30/facebook.png" alt="facebook"/></a>
-                          <a href="#"><img width="30" height="30" src="https://img.icons8.com/fluency/30/youtube-squared.png" alt="youtube-squared"/></a>
-                          <a href="#"><img width="30" height="30" src="https://img.icons8.com/color/30/blogger.png" alt="blogger"/></a>
-                        </a>
-                        <img src="../../../assets/img/template.png">
-                      </div>
-                    </div>
+                    <hr class="my-4">
+                  }
+
+
+                  <div class="pt-5">
+                    <h6 class="mb-0"><a href="/home" class="text-body" style="text-decoration: none;"><img width="25" height="25" src="https://img.icons8.com/ios/50/left--v1.png" alt="left--v1"/>Volver</a></h6>
                   </div>
                 </div>
               </div>
-            </li>
-          </ul>
-  
-          <form class="d-flex align-items-center w-100 form-search">
-            <div class="input-group">
-              <input type="search" class="form-control" placeholder="Buscar en el catálogo..." aria-label="Search"/>
-              <span class="input-group-text">
-                <a href="/checkout"><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/search--v1.png" alt="search--v1"/></a>
-              </span>
+              <div class="col-lg-4 bg-grey">
+                <div class="p-5">
+                  <h3 class="fw-bold mb-5 mt-2 pt-1">Resumen</h3>
+                  <hr class="my-4">
+
+                  <div class="d-flex justify-content-between mb-4">
+                    <h5 class="text-uppercase">Productos</h5>
+                    <h5>{{ getTotalPrice()}}€</h5>
+                  </div>
+
+                  <h5 class="text-uppercase mb-3">Envío</h5>
+
+                  <div class="mb-4 pb-2">
+                    <select data-mdb-select-init (change)="updateTotalPrice($event)">
+                        <option value="1">Estándar - Gratis</option>
+                        <option value="2">Express - 5€ (1-2 días)</option>
+                    </select>
+                  </div>
+
+                  <h5 class="text-uppercase mb-3">Código de descuento</h5>
+
+                  <div class="mb-5">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="text" id="form3Examplea2" class="form-control form-control-lg" placeholder="código 'MJA' 10% descuento" />
+                      <label class="form-label" for="form3Examplea2">Introduce el código</label><br>
+                      <button class="btn btn-dark" (click)="applyDiscount()">Aplicar</button>
+                    </div>
+                  </div>
+
+                  <hr class="my-4">
+
+                  <div class="d-flex justify-content-between mb-5">
+                    <h5 class="text-uppercase">Precio Total</h5>
+                    <h5>{{ getTotalPrice()}}€</h5>
+                  </div>
+
+                  <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg"
+                    data-mdb-ripple-color="dark" (click)="processPayment()" [disabled]="isProcessingPayment" style="margin-top: -30px;">
+                    Procesar Pago
+                  </button>
+                  @if (isProcessingPayment) {
+                    <p>Procesando el pago...</p><span class="loader"></span>
+                  }
+                </div>
+              </div>
             </div>
-          </form>
-  
-          <ul class="navbar-nav ms-3">
-            <li class="nav-item me-3">
-              <a class="nav-link d-flex align-items-center" href="#!"><img width="30" height="30" src="https://img.icons8.com/ios-filled/30/shopping-basket--v1.png" alt="shopping-basket--v1"/></a>
-            </li>
-            <li class="nav-item" style="width: 65px;">
-              <a href="/login" routerLinkActive="active" class="nav-link d-flex align-items-center">
-                <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/user.png" alt="user"/>
-              </a>
-            </li>
-          </ul>
+          </div>
         </div>
       </div>
-    </nav>
-    <!-- Navbar -->
-    <!-- Carousel wrapper -->
-  </header>
-
-<p>cart works!</p>
+    </div>
+  </div>
+</section>

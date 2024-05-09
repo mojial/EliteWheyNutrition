@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Product } from "../../interfaces/product";
 import { DataService } from '../../services/data.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-card',
@@ -12,6 +13,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class CardComponent {
 
+  products!: Product[];
+  constructor(private router: Router, private route: ActivatedRoute, private DataService: DataService, private CartSerivce: CartService) {}
+
   navigateToProduct(productId: string) {
     this.router.navigate(['/product-detail', productId]);
   }
@@ -20,8 +24,14 @@ export class CardComponent {
     console.log(productId);
   }
 
-  products!: Product[];
-  constructor(private router: Router, private route: ActivatedRoute, private DataService: DataService) {}
+  addToCart(productId: string) {
+    // Llama al método addToCart del servicio CartService
+    this.CartSerivce.addToCart(productId).subscribe(response => {
+      console.log(response);
+    });
+  }
+  
+  
 
   ngOnInit() {
     this.route.url.subscribe(segments => {

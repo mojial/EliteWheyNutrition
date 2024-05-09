@@ -65,11 +65,11 @@
    
    @for (product of products; track $index) {
     <div class="col-6 col-md-3" style=" margin-left: 1px; margin-bottom: 50px;">
-        <div (click)="navigateToProduct(product.id)" class="card shadow">
-            <img src={{product.photo}} alt="imagen producto" style="cursor:pointer"> 
+        <div class="card shadow">
+            <img src={{product.photo}} (click)="navigateToProduct(product.id)" alt="imagen producto" style="cursor:pointer"> 
             <div class="card-footer border-top border-gray-300 p-2">
-                <a class="h6">{{product.title}}</a>
-                <h6 class="h6 fw-light text-gray mt-1">{{product.description}}</h6>
+                <a class="h6" (click)="navigateToProduct(product.id)" style="cursor:pointer">{{product.title}}</a>
+                <h6 class="h6 fw-light text-gray mt-1" (click)="navigateToProduct(product.id)" style="cursor:pointer">{{product.description}}</h6>
                 <div class="d-flex mt-1">
                     <span><img width="15" height="15" src="https://img.icons8.com/emoji/20/star-emoji.png" alt="star-emoji"/></span> 
                     <span><img width="15" height="15" src="https://img.icons8.com/emoji/20/star-emoji.png" alt="star-emoji"/></span> 
@@ -80,9 +80,9 @@
                 </div>
                 <div class="d-flex justify-content-between align-items-center mt-2">
                     <span class="h6 mb-0 text-gray" style="margin-top: -20px;">{{product.price}}€</span> 
-                    <a class="btn btn-xs btn-tertiary" href="#">
-                        <a class="btn btn-success shadow-0" style="margin-top: -50px;">
-                        <img style="margin-top: -3px;" src="../../../assets/img/icons8-basket-20.png"/>
+                    <a class="btn">
+                        <a (click)="addToCart(product.id)"class="btn btn-success shadow-0" style="margin-top: -50px;">
+                        <img  style="margin-top: -3px;" src="../../../assets/img/icons8-basket-20.png"/>
                     </a>
                     </a>
                 </div>

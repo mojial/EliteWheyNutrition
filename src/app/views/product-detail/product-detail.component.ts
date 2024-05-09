@@ -5,6 +5,8 @@ import { DataService } from '../../services/data.service';
 import { CardComponent } from "../../components/card/card.component";
 import { UserService } from '../../services/user.service';
 import { ProductComponent } from "../product/product.component";
+import { CartService } from '../../services/cart.service';
+
 
 @Component({
     selector: 'app-product-detail',
@@ -17,7 +19,7 @@ export class ProductDetailComponent {
   
   product!: Product;
 
-  constructor(private router: Router, private userService : UserService,  private route: ActivatedRoute, private dataService: DataService) {}
+  constructor(private router: Router, private userService : UserService,  private route: ActivatedRoute, private dataService: DataService, private CartSerivce: CartService) {}
 
   ngOnInit() {
     this.route.params.subscribe(params => {
