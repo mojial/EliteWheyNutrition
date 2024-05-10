@@ -3,13 +3,14 @@ import { CardComponent } from "../../components/card/card.component";
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { SubheaderComponent } from "../subheader/subheader.component";
 
 @Component({
     selector: 'app-preentrenos',
     standalone: true,
     templateUrl: './preentrenos.component.html',
     styleUrl: './preentrenos.component.css',
-    imports: [CardComponent,FormsModule]
+    imports: [CardComponent, FormsModule, SubheaderComponent]
 })
 export class PreentrenosComponent {
 

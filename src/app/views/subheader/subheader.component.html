@@ -1,3 +1,5 @@
+<!--Main Navigation-->
+
 <header>
     <div id="info">
       <div class="container d-flex justify-content-between">
@@ -68,23 +70,29 @@
             </li>
           </ul>
   
-        <form class="d-flex align-items-center w-100 form-search" (ngSubmit)="searchCategory()">
-          <div class="input-group">
-            <input type="search" class="form-control" placeholder="Buscar en el catálogo..." [(ngModel)]="searchQuery" name="searchQuery" aria-label="Search"/>
-            <span class="input-group-text">
-              <a><img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/search--v1.png" alt="search--v1"/></a>
-            </span>
-          </div>
-        </form>
+          <form class="d-flex align-items-center w-100 form-search" (ngSubmit)="searchCategory()">
+            <div class="input-group">
+              <input type="search" class="form-control" placeholder="Buscar en el catálogo..." [(ngModel)]="searchQuery" name="searchQuery" aria-label="Search"/>
+              <span class="input-group-text">
+                <a><img  width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/search--v1.png" [(ngModel)]="searchQuery" name="searchQuery" alt="search--v1"/></a>
+              </span>
+            </div>
+          </form>
   
           <ul class="navbar-nav ms-3">
             <li class="nav-item me-3">
               <a class="nav-link d-flex align-items-center" href="/cart"><img width="30" height="30" src="https://img.icons8.com/ios-filled/30/shopping-basket--v1.png" alt="shopping-basket--v1"/></a>
             </li>
             <li class="nav-item" style="width: 65px;">
-              <a class="nav-link d-flex align-items-center">
-                <button type="button" id="logout" (click)="onClick()" class="btn btn-outline-danger btn-sm">Cerrar sesión</button>
+              <a class="nav-link d-flex align-items-center" href="/profile">
+                <img width="30" height="30" src="https://img.icons8.com/ios-filled/30/user.png" alt="user"/>
               </a>
+            </li>
+            <li class="nav-item" style="width: 65px; margin-top: 10px;">
+              usuario <!-- Falta el token de firebase par que imprima el username -->
+            </li>
+            <li class="nav-item" style="width: 65px; margin-top: 8px;">
+              <button type="button" id="logout" (click)="onClick()" class="btn btn-outline-danger btn-sm">Cerrar sesión</button>
             </li>
           </ul>
         </div>
@@ -92,48 +100,5 @@
     </nav>
     <!-- Navbar -->
     <!-- Carousel wrapper -->
-    <hr>
   </header>
-
-<div class="container rounded bg-white mt-5 mb-5">
-    <div class="row">
-        <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img width="150" height="150" src="https://img.icons8.com/ios-filled/100/user-male-circle.png" alt="user-male-circle"/><span class="font-weight-bold">Usuario</span><span class="text-black-50">correo usuario</span><span> </span></div>
-        </div>
-        <div class="col-md-5 border-right">
-            <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <h4 class="text-right">Configuración de Perfil</h4>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-md-6"><label class="labels">Nombre</label><input type="text" class="form-control" placeholder="nombre" value=""></div>
-                    <div class="col-md-6"><label class="labels">Apellidos</label><input type="text" class="form-control" value="" placeholder="apellidos"></div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Teléfono movil</label><input type="text" class="form-control" placeholder="agrega número de teléfono" value=""></div>
-                    <div class="col-md-12"><label class="labels">Linea dirección 1</label><input type="text" class="form-control" placeholder="agrega dirección 1" value=""></div>
-                    <div class="col-md-12"><label class="labels">Linea dirección 2</label><input type="text" class="form-control" placeholder="agrega dirección 2" value=""></div>
-                    <div class="col-md-12"><label class="labels">Código postal</label><input type="text" class="form-control" placeholder="agrega código postal" value=""></div>
-                    <div class="col-md-12"><label class="labels">Estado</label><input type="text" class="form-control" placeholder="agrega estado 2" value=""></div>
-                    <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control" placeholder="agrega area 2" value=""></div>
-                    <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="email id" value=""></div>
-                    <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="educacción" value=""></div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-6"><label class="labels">Ciudad</label><input type="text" class="form-control" placeholder="ciudad" value=""></div>
-                    <div class="col-md-6"><label class="labels">Estado/Región</label><input type="text" class="form-control" value="" placeholder="estado"></div>
-                </div>
-
-                <div class="mt-5 text-center">
-                  <button class="btn btn-primary" type="button">Guardar Perfil</button>
-                </div>
-                <div class="mt-4 text-center">
-                  <a href="/home"><button class="btn btn-outline-primary btn-sm" type="button">Volver al inicio</button></a>
-                </div>
-                  <div class="mt-4 text-center">
-              <button type="button" id="logout" (click)="onClick()" class="btn btn-outline-danger btn-sm">Cerrar sesión</button>
-                  </div>
-            </div>
-        </div>
-    </div>
-</div>
+  <hr>

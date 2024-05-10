@@ -4,9 +4,9 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../../services/data.service';
 import { CardComponent } from "../../components/card/card.component";
 import { UserService } from '../../services/user.service';
-import { ProductComponent } from "../product/product.component";
 import { CartService } from '../../services/cart.service';
 import { FormsModule } from '@angular/forms';
+import { SubheaderComponent } from "../subheader/subheader.component";
 
 
 
@@ -15,7 +15,7 @@ import { FormsModule } from '@angular/forms';
     standalone: true,
     templateUrl: './product-detail.component.html',
     styleUrl: './product-detail.component.css',
-    imports: [CardComponent, ProductComponent,FormsModule]
+    imports: [CardComponent, FormsModule, SubheaderComponent]
 })
 export class ProductDetailComponent {
   

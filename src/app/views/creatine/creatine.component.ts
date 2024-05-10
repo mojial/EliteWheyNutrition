@@ -3,13 +3,14 @@ import { CardComponent } from "../../components/card/card.component";
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { FormsModule } from '@angular/forms';
+import { SubheaderComponent } from "../subheader/subheader.component";
 
 @Component({
     selector: 'app-creatine',
     standalone: true,
     templateUrl: './creatine.component.html',
     styleUrl: './creatine.component.css',
-    imports: [CardComponent,FormsModule]
+    imports: [CardComponent, FormsModule, SubheaderComponent]
 })
 export class CreatineComponent {
 

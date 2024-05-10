@@ -3,11 +3,12 @@ import { HttpClient } from '@angular/common/http';
 import { CartService } from '../../services/cart.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
@@ -18,7 +19,7 @@ export class CartComponent {
   discountCode: string = '';
   isProcessingPayment = false;
 
-  constructor(private cartService: CartService, private router: Router) { }
+  constructor(private cartService: CartService, private router: Router, private userService : UserService) { }
 
   ngOnInit(): void {
     this.cartService.getCartItems().subscribe(items => {
@@ -62,11 +63,100 @@ export class CartComponent {
       const totalPriceBeforeDiscount = parseFloat(this.totalPrice);
       const discountedPrice = totalPriceBeforeDiscount * 0.9; // Aplica un descuento del 10%
       this.totalPrice = discountedPrice.toFixed(2);
-    }
+    } 
+    this.discountMsg();
   }
 
   processPayment() {
     this.isProcessingPayment = true;
   }
+
+  codigo: string = '';
+  mensaje: string = '';
+  codigoValido: boolean = false;
+
+  discountMsg() {
+    this.codigoValido = (this.codigo.toLocaleUpperCase() === 'MJA');
+    if (this.codigoValido) {
+      this.mensaje = '¡Código aplicado! Has obtenido un 10% de descuento en tu compra.';
+    } else {
+      this.mensaje = 'Lo sentimos, el código ingresado no es válido. Por favor, verifica e inténtalo de nuevo.';
+    }
+  }
+
+  onClick(){
+    this.userService.logout()
+    .then(()=>{
+      this.router.navigate(['/register']);
+    })
+    .catch(error => console.log(error));
+  }
+
+  searchQuery: string = '';
+  
+  searchCategory() {
+    if (this.searchQuery.trim() !== '') {
+        let category: string = '';
+
+        switch (true) {
+            case this.searchQuery.toLowerCase().includes('proteina') || this.searchQuery.toLowerCase().includes('prote') 
+            || this.searchQuery.toLowerCase().includes('whey') 
+            || this.searchQuery.toLowerCase().includes('protein'):
+                category = 'proteina';
+                break;
+            case this.searchQuery.toLowerCase().includes('creatine') || this.searchQuery.toLowerCase().includes('creatina')
+            || this.searchQuery.toLowerCase().includes('crea')
+            || this.searchQuery.toLowerCase().includes('monohidratada'):
+                category = 'creatine';
+                break;
+            case this.searchQuery.toLowerCase().includes('aminoacidos') || this.searchQuery.toLowerCase().includes('amino')
+            || this.searchQuery.toLowerCase().includes('amin') || this.searchQuery.toLowerCase().includes('bcaas')
+            || this.searchQuery.toLowerCase().includes('bcaa'):
+                category = 'aminoacidos';
+                break;
+            case this.searchQuery.toLowerCase().includes('hidratos') || this.searchQuery.toLowerCase().includes('mass')
+            || this.searchQuery.toLowerCase().includes('gainer') || this.searchQuery.toLowerCase().includes('hidra'):
+                category = 'hidratos';
+                break;
+            case this.searchQuery.toLowerCase().includes('preentrenos') || this.searchQuery.toLowerCase().includes('preworkout')
+            || this.searchQuery.toLowerCase().includes('pree') || this.searchQuery.toLowerCase().includes('pre') 
+            || this.searchQuery.toLowerCase().includes('pre-workout') || this.searchQuery.toLowerCase().includes('prework')
+            || this.searchQuery.toLowerCase().includes('work') || this.searchQuery.toLowerCase().includes('entreno'):
+                category = 'preentrenos';
+                break;
+            case this.searchQuery.toLowerCase().includes('controldepeso') || this.searchQuery.toLowerCase().includes('control')
+            || this.searchQuery.toLowerCase().includes('mantener') || this.searchQuery.toLowerCase().includes('peso'):
+                category = 'controldepeso';
+                break;
+            case this.searchQuery.toLowerCase().includes('barritas') || this.searchQuery.toLowerCase().includes('barrita')
+            || this.searchQuery.toLowerCase().includes('bar') || this.searchQuery.toLowerCase().includes('chocolatina'):
+                category = 'barritas';
+                break;
+            case this.searchQuery.toLowerCase().includes('vitaminasminerales') || this.searchQuery.toLowerCase().includes('vitaminas')
+            || this.searchQuery.toLowerCase().includes('minerales') || this.searchQuery.toLowerCase().includes('vitamin')
+            || this.searchQuery.toLowerCase().includes('mineral'):
+                category = 'vitaminasminerales';
+                break;
+            case this.searchQuery.toLowerCase().includes('quemagrasas') || this.searchQuery.toLowerCase().includes('quema')
+            || this.searchQuery.toLowerCase().includes('grasas') || this.searchQuery.toLowerCase().includes('grasa')
+            || this.searchQuery.toLowerCase().includes('burner') || this.searchQuery.toLowerCase().includes('fat burner'):
+                category = 'quemagrasas';
+                break;
+            case this.searchQuery.toLowerCase().includes('intraentrenos') || this.searchQuery.toLowerCase().includes('intra')
+            || this.searchQuery.toLowerCase().includes('intra entreno') || this.searchQuery.toLowerCase().includes('intra entrenos'):
+                category = 'intraentrenos';
+                break;
+            default:
+                category = '';
+                break;
+        }
+
+        if (category !== '') {
+            this.router.navigate(['/', category]);
+        } else {
+            this.router.navigate(['/home']);
+        }
+    }
+}
   
 }

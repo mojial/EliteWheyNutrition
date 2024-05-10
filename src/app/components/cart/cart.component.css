@@ -18,7 +18,7 @@
     top: 0;
     left: 0;
     box-sizing: border-box;
-    animation: animFw 10s ease-in infinite,  barStripe 1s linear infinite;
+    animation: animFw 1.5s ease-in infinite,  barStripe 1s linear infinite;
   }
   
   @keyframes barStripe {
@@ -39,3 +39,23 @@
     }
   }
       
+  #info{
+    background-color: grey;
+   }
+  #leng{
+    justify-content: right;
+  }
+  
+  .custom-carousel-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #logout {
+    white-space: nowrap; /* Evita el salto de línea en el texto del botón */
+    overflow: hidden; /* Oculta cualquier contenido que desborde */
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
+    min-width: 120px; /* Establece un ancho mínimo para el botón */
+  }
+  
+  

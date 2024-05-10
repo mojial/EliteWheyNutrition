@@ -3,13 +3,14 @@ import { CardComponent } from "../../components/card/card.component";
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { SubheaderComponent } from "../subheader/subheader.component";
 
 @Component({
     selector: 'app-intraentrenos',
     standalone: true,
     templateUrl: './intraentrenos.component.html',
     styleUrl: './intraentrenos.component.css',
-    imports: [CardComponent,FormsModule]
+    imports: [CardComponent, FormsModule, SubheaderComponent]
 })
 export class IntraentrenosComponent {
 

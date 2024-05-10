@@ -3,13 +3,14 @@ import { CardComponent } from "../../components/card/card.component";
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { SubheaderComponent } from "../subheader/subheader.component";
 
 @Component({
     selector: 'app-controldepeso',
     standalone: true,
     templateUrl: './controldepeso.component.html',
     styleUrl: './controldepeso.component.css',
-    imports: [CardComponent,FormsModule]
+    imports: [CardComponent, FormsModule, SubheaderComponent]
 })
 export class ControldepesoComponent {
 

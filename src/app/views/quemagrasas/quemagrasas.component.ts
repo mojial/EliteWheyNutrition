@@ -3,13 +3,14 @@ import { CardComponent } from "../../components/card/card.component";
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { SubheaderComponent } from "../subheader/subheader.component";
 
 @Component({
     selector: 'app-quemagrasas',
     standalone: true,
     templateUrl: './quemagrasas.component.html',
     styleUrl: './quemagrasas.component.css',
-    imports: [CardComponent,FormsModule]
+    imports: [CardComponent, FormsModule, SubheaderComponent]
 })
 export class QuemagrasasComponent {
 
