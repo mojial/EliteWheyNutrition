@@ -73,7 +73,7 @@
           <form class="d-flex align-items-center w-100 form-search" (ngSubmit)="searchCategory()">
             <div class="input-group">
               <input type="search" class="form-control" placeholder="Buscar en el catálogo..." [(ngModel)]="searchQuery" name="searchQuery" aria-label="Search"/>
-              <span class="input-group-text">
+              <span class="input-group-text" (click)="searchCategory()" style="cursor: pointer;">
                 <a><img  width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/search--v1.png" [(ngModel)]="searchQuery" name="searchQuery" alt="search--v1"/></a>
               </span>
             </div>

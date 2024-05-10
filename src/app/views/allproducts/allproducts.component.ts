@@ -3,7 +3,7 @@ import { CardComponent } from "../../components/card/card.component";
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 import { FormsModule } from '@angular/forms';
-import { SubheaderComponent } from "../subheader/subheader.component";
+import { SubheaderComponent } from "../../components/subheader/subheader.component";
 
 
 @Component({

@@ -6,7 +6,7 @@ import { CardComponent } from "../../components/card/card.component";
 import { UserService } from '../../services/user.service';
 import { CartService } from '../../services/cart.service';
 import { FormsModule } from '@angular/forms';
-import { SubheaderComponent } from "../subheader/subheader.component";
+import { SubheaderComponent } from "../../components/subheader/subheader.component";
 
 
 
