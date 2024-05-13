@@ -12,14 +12,20 @@ import { FormsModule } from '@angular/forms';
 })
 export class SubheaderComponent implements OnInit {
 
+    userEmail: string | null = '';
+
   constructor(
     private userService : UserService,
     private router: Router
   ){}
 
   ngOnInit(): void {
-    
+    // Obtener el email del localStorage
+    const userEmailFromLocalStorage = localStorage.getItem('emailId');
+    if (userEmailFromLocalStorage) {
+      this.userEmail = userEmailFromLocalStorage;
   }
+}
 
   onClick(){
     this.userService.logout()
@@ -28,6 +34,7 @@ export class SubheaderComponent implements OnInit {
     })
     .catch(error => console.log(error));
   }
+  
 
   searchQuery: string = '';
 

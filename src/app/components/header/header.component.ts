@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { RegisterComponent } from '../register/register.component';
 import { Router } from '@angular/router';
@@ -14,7 +14,17 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
-export class HeaderComponent{
+export class HeaderComponent implements OnInit{
+
+    userEmail: string | null = '';
+
+    ngOnInit(): void {
+        // Obtener el email del localStorage
+        const userEmailFromLocalStorage = localStorage.getItem('emailId');
+        if (userEmailFromLocalStorage) {
+          this.userEmail = userEmailFromLocalStorage;
+      }
+    }
 
   constructor(private userService : UserService,private router: Router){}
 

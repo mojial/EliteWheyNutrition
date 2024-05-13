@@ -24,4 +24,9 @@ export class UserService{
         return signOut(this.auth);
     }
 
+    getUserEmail(): string | null {
+        const user: User | null = this.auth.currentUser;
+        return user ? user.email : null;
+      }
+      
 }

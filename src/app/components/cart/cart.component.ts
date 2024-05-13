@@ -4,13 +4,14 @@ import { CartService } from '../../services/cart.service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
+import { SubheaderComponent } from "../subheader/subheader.component";
 
 @Component({
-  selector: 'app-cart',
-  standalone: true,
-  imports: [FormsModule],
-  templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+    selector: 'app-cart',
+    standalone: true,
+    templateUrl: './cart.component.html',
+    styleUrl: './cart.component.css',
+    imports: [FormsModule, SubheaderComponent]
 })
 export class CartComponent {
   cartItems: any[] = [];

@@ -61,3 +61,9 @@ body {
     text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
     min-width: 120px; /* Establece un ancho mínimo para el botón */
   } 
+  
+  .reiniciar-btn:hover {
+    background-color: #e2e6ea; /* Cambia el color de fondo al pasar el mouse */
+    color: #212529; /* Cambia el color del texto al pasar el mouse */
+    border-color: #e2e6ea; /* Cambia el color del borde al pasar el mouse */
+  }

@@ -16,3 +16,10 @@
     text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
     min-width: 120px; /* Establece un ancho mínimo para el botón */
   }
+
+  .nav-itemUser{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100x; /* Ajusta este valor según sea necesario */
+  }
