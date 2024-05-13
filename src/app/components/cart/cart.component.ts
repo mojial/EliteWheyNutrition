@@ -28,9 +28,22 @@ export class CartComponent {
   }
 
   removeFromCart(productId: string) {
-    this.cartService.removeFromCart(productId).subscribe(response => {
-      console.log(response);
-    });
+    const index = this.cartItems.findIndex(item => item.product.id === productId);
+    if (index !== -1) {
+      this.cartItems.splice(index, 1);
+      // Eliminar el producto del carrito en la API
+      this.cartService.removeFromCart(productId).subscribe(
+        () => {
+          console.log('Producto eliminado del carrito en la API');
+        },
+        (error) => {
+          console.error('Error al eliminar el producto del carrito en la API:', error);
+          // Si hay un error al eliminar el producto en la API, puedes agregar lógica aquí para revertir el cambio
+          // Por ejemplo, volver a agregar el producto al carrito localmente
+          // this.cartItems.splice(index, 0, item);
+        }
+      );
+    }
   }
 
   updateTotalPrice(event: any) {

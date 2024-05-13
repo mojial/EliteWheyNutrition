@@ -21,7 +21,8 @@ export class CartService {
   
   // Método para eliminar un producto del carrito
   removeFromCart(productId: string): Observable<any> {
-    return this.http.delete<any>(`http://localhost:3000/api/cart/${productId}`);
+    const url = `${'http://localhost:3000/api/cart'}/${productId}`;
+    return this.http.delete<any>(url);
   }
 
   
