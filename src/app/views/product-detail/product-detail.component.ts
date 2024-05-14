@@ -18,7 +18,7 @@ import { SubheaderComponent } from "../../components/subheader/subheader.compone
     imports: [CardComponent, FormsModule, SubheaderComponent]
 })
 export class ProductDetailComponent {
-  
+
   product!: Product;
 
   constructor(private router: Router, private userService : UserService,  private route: ActivatedRoute, private dataService: DataService, private CartSerivce: CartService) {}
@@ -32,6 +32,13 @@ export class ProductDetailComponent {
     });
   }
 
+  addToCart(productId: string) {
+    // Llama al método addToCart del servicio CartService
+    this.CartSerivce.addToCart(productId).subscribe(response => {
+      console.log(response);
+    });
+  }
+
   onClick(){
     this.userService.logout()
     .then(()=>{
@@ -41,14 +48,14 @@ export class ProductDetailComponent {
   }
 
   searchQuery: string = '';
-  
+
   searchCategory() {
     if (this.searchQuery.trim() !== '') {
         let category: string = '';
 
         switch (true) {
-            case this.searchQuery.toLowerCase().includes('proteina') || this.searchQuery.toLowerCase().includes('prote') 
-            || this.searchQuery.toLowerCase().includes('whey') 
+            case this.searchQuery.toLowerCase().includes('proteina') || this.searchQuery.toLowerCase().includes('prote')
+            || this.searchQuery.toLowerCase().includes('whey')
             || this.searchQuery.toLowerCase().includes('protein'):
                 category = 'proteina';
                 break;
@@ -67,7 +74,7 @@ export class ProductDetailComponent {
                 category = 'hidratos';
                 break;
             case this.searchQuery.toLowerCase().includes('preentrenos') || this.searchQuery.toLowerCase().includes('preworkout')
-            || this.searchQuery.toLowerCase().includes('pree') || this.searchQuery.toLowerCase().includes('pre') 
+            || this.searchQuery.toLowerCase().includes('pree') || this.searchQuery.toLowerCase().includes('pre')
             || this.searchQuery.toLowerCase().includes('pre-workout') || this.searchQuery.toLowerCase().includes('prework')
             || this.searchQuery.toLowerCase().includes('work') || this.searchQuery.toLowerCase().includes('entreno'):
                 category = 'preentrenos';
