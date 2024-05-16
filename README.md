@@ -1,5 +1,6 @@
 # EliteWhey Nutrition TFG
-![image](https://github.com/mojial/EliteWheyNutrition/assets/122776066/cb1e9e09-c6b3-49d1-8f76-bacb957cc988)
+![image](https://github.com/mojial/EliteWheyNutrition/assets/122776066/f83dcc62-7da5-4dec-8183-d90c65f3bdd8)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
 
